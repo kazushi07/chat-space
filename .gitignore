@@ -29,3 +29,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+#コミット外のファイルを追加指定、これで保管された画像のアップロードを防ぐ
+public/uploads/*
