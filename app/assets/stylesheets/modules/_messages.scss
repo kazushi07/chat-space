@@ -50,28 +50,34 @@
 
   }
 
-  &__group-list{
-    background-color:#2f3e51 ;
-    height: calc(100vh - 100px);
-    color: #ffffff;
-    font-weight:bold;
-    padding: 20,20,40,20;
+  &__grouplist-top{
 
-    &__name{
-      font-size: 15px;
+    &__sub{
+      background-color:#2f3e51 ;
+      height: calc(100vh - 100px);
+      font-weight:bold;
+      padding: 20,20,40,20;
 
-      padding-top: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-bottom: 5px;
-    }
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
 
-    &__message{
-      font-size: 11px;
-      margin-left: 20px;
+      &__name{
+        font-size: 15px;
+
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 5px;
+      }
+
+      &__message{
+        font-size: 11px;
+        margin-left: 20px;
+      }
     }
   }
-
 }
 
 .Chat-main{
