@@ -2,36 +2,23 @@
   .Chat-main__group-info
     .room-info
       .Chat-main__group-info__room
-        test
+        = @group.name
       .Chat-main__group-info__member
-        member:masa
+        Member:
+        - @group.users.each do |user|
+          = user.name
+
     .Chat-main__group-info__edit
-      Edit
+      = link_to 'Edit', edit_group_path(@group)
 
   .Chat-main__message-list
-    .Chat-main__message-list__speaker
-      masa
-    .Chat-main__message-list__time
-      2019/11/20(Wed) 17:00:01
-    .Chat-main__message-list__text
-      おはよう！
-
-    .Chat-main__message-list__speaker
-      masa
-    .Chat-main__message-list__time
-      2019/11/20(Wed) 18:50:01
-    .Chat-main__message-list__text
-      今日は夜から雨
+    = render @messages
 
   .Chat-main__post-form
-
-    %form.Chat-main__post-form__message
+    = form_with model: [@group, @message], html: {class: "Chat-main__post-form__message"}, local: true do |f|
       .Chat-main__post-form__message__input-text
-        %input{type: "text", placeholder:"type a message", class:"Form__inputcontent"}        
-
-        %label{class: "Form__inputimage"}
-          = icon('far', 'image')
-          %input{type: "file", class:"Form__file"}
-      %input{type: "submit",value:"Send", class:"Form__submit"}
-
-
+        = f.text_field :content, class: 'Form__inputcontent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputimage' do
+          = icon('far', 'image', class: 'Form__inputimage')
+          = f.file_field :image, class: 'Form__file'
+      = f.submit 'Send', class: 'Form__submit'

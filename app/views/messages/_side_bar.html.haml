@@ -4,7 +4,7 @@
       = current_user.name
       %ul.Side-bar__user-name__top-items__icons
         %li.Side-bar__user-name__top-items__icons__edit
-          = link_to 'groups/new' do
+          = link_to new_group_path(current_user) do
             = icon('far', 'edit')
         %li.Side-bar__user-name__top-items__icons__config
           = link_to edit_user_path(current_user) do
@@ -13,7 +13,7 @@
   .Side-bar__grouplist-top
     .Side-bar__grouplist-top__sub
       - current_user.groups.each do |group|
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Side-bar__grouplist-top__sub__name
             = group.name
           .Side-bar__grouplist-top__sub__message
