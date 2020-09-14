@@ -7,34 +7,35 @@ $(function(){
     if ( message.image ) {
       let html =
        `<div class="MessageBox" data-message-id=${message.id}>
-          <div class="MessageBox">
-            <div class="Chat-main__message-list__speaker">
-              ${message.user_name}
-            </div>
-            <div class="Chat-main__message-list__time">
-              ${message.created_at}
-            </div>
-            <p class="Chat-main__message-list__text">
-              ${message.content}
-            </p>
-            <img class="Form__inputimage" src="${message.image}">
-            </div>
-          </div>`
-
-      return html;
-    } else {
-      let html =
-      `<div class="MessageBox" data-message-id=${message.id}>
-         <div class="MessageBox">
           <div class="Chat-main__message-list__speaker">
             ${message.user_name}
           </div>
           <div class="Chat-main__message-list__time">
             ${message.created_at}
           </div>
-          <p class="Chat-main__message-list__text">
-            ${message.content}
-          </p>
+            <div class="Chat-main__message-list__text">
+              <p class="Message__content">
+                ${message.content}
+              </p>
+            </div>
+            <img class="Form__inputimage" src="${message.image}">
+        </div>`
+
+      return html;
+    } else {
+      let html =
+      `<div class="MessageBox" data-message-id=${message.id}>
+          <div class="Chat-main__message-list__speaker">
+            ${message.user_name}
+          </div>
+          <div class="Chat-main__message-list__time">
+            ${message.created_at}
+          </div>
+          <div class="Chat-main__message-list__text">
+            <p class="Message__content">
+              ${message.content}
+            </p>
+          </div>
       </div>`
       return html;
     };
