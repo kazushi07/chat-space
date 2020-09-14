@@ -4,11 +4,10 @@ $(function(){
       let html =
         `<div class="MessageBox" data-message-id=${message.id}>
           <div class="Chat-main__message-list__speaker">
-              ${message.user_name}
-            </div>
-            <div class="Chat-main__message-list__time">
-              ${message.created_at}
-            </div>
+            ${message.user_name}
+          </div>
+          <div class="Chat-main__message-list__time">
+            ${message.created_at}
           </div>
           <div class="Chat-main__message-list__text">
             <p class="Message__content">
@@ -22,11 +21,10 @@ $(function(){
       let html =
       `<div class="MessageBox" data-message-id=${message.id}>
         <div class="Chat-main__message-list__speaker">
-            ${message.user_name}
-          </div>
-          <div class="Chat-main__message-list__time">
-            ${message.created_at}
-          </div>
+          ${message.user_name}
+        </div>
+        <div class="Chat-main__message-list__time">
+          ${message.created_at}
         </div>
         <div class="Chat-main__message-list__text">
           <p class="Message__content">
